@@ -22,6 +22,9 @@ class Loot_iOS_TestTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        BackendRequests.getTransactions { transactions in
+            XCTAssert(!transactions.isEmpty)
+        }
     }
 
     func testPerformanceExample() {
