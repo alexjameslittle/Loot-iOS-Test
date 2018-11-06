@@ -7,22 +7,27 @@
 //
 
 import UIKit
+import SnapKit
 
 class TransactionView: UIView {
 
     var baseView: UIView = {
         var view = UIView()
+        view.backgroundColor = .white
         return view
     }()
 
     lazy var tableView: UITableView = {
         var table = UITableView()
         table.allowsSelection = false
+        table.backgroundColor = .clear
+        table.separatorStyle = .none
         return table
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .clear
         setup()
         setupConstraints()
     }
@@ -34,6 +39,23 @@ class TransactionView: UIView {
     func setup() {
         addSubview(baseView)
         baseView.addSubview(tableView)
+        setupTableView()
+    }
+
+    func setupTableView() {
+        tableView.register(TransactionCell.self, forCellReuseIdentifier: TransactionCell.identifier)
+        tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
+    }
+
+    func setupConstraints() {
+
+        baseView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 
 }

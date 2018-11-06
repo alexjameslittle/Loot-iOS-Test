@@ -16,6 +16,12 @@
 		8D77A7CE2191C03B00A68220 /* Loot_iOS_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7CD2191C03B00A68220 /* Loot_iOS_TestTests.swift */; };
 		8D77A7D92191C2BB00A68220 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7D82191C2BB00A68220 /* Transaction.swift */; };
 		8D77A7DC2191C48C00A68220 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7DB2191C48C00A68220 /* TransactionView.swift */; };
+		8D77A7DE2191C87D00A68220 /* DataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7DD2191C87D00A68220 /* DataSingleton.swift */; };
+		8D77A7E02191C8E400A68220 /* BackendRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7DF2191C8E400A68220 /* BackendRequests.swift */; };
+		8D77A7E22191CA4A00A68220 /* LootAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7E12191CA4A00A68220 /* LootAPI.swift */; };
+		8D77A7E42191CAC700A68220 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7E32191CAC700A68220 /* Constants.swift */; };
+		8D77A7E62191D73200A68220 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7E52191D73200A68220 /* TransactionCell.swift */; };
+		8D77A7ED219201E400A68220 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7EC219201E400A68220 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		8D77A7CF2191C03B00A68220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D77A7D82191C2BB00A68220 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		8D77A7DB2191C48C00A68220 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		8D77A7DD2191C87D00A68220 /* DataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSingleton.swift; sourceTree = "<group>"; };
+		8D77A7DF2191C8E400A68220 /* BackendRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendRequests.swift; sourceTree = "<group>"; };
+		8D77A7E12191CA4A00A68220 /* LootAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootAPI.swift; sourceTree = "<group>"; };
+		8D77A7E32191CAC700A68220 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8D77A7E52191D73200A68220 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		8D77A7EC219201E400A68220 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		9E1EFF8EFF876A472CB7230B /* Pods-Loot-iOS-TestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loot-iOS-TestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Loot-iOS-TestTests/Pods-Loot-iOS-TestTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6CAE1604F3B1803F0BE68F4 /* Pods_Loot_iOS_TestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loot_iOS_TestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,10 +103,13 @@
 		8D77A7B72191C03A00A68220 /* Loot-iOS-Test */ = {
 			isa = PBXGroup;
 			children = (
+				8D77A7EB2192015F00A68220 /* Controllers */,
+				8D77A7EA2192014700A68220 /* Singletons */,
+				8D77A7E92192013600A68220 /* Cells */,
+				8D77A7E8219200F000A68220 /* View */,
 				8D77A7B82191C03A00A68220 /* AppDelegate.swift */,
-				8D77A7BA2191C03A00A68220 /* TransactionViewController.swift */,
-				8D77A7DB2191C48C00A68220 /* TransactionView.swift */,
-				8D77A7D82191C2BB00A68220 /* Transaction.swift */,
+				8D77A7E7219200AC00A68220 /* Network */,
+				8D77A7E32191CAC700A68220 /* Constants.swift */,
 				8D77A7BF2191C03B00A68220 /* Assets.xcassets */,
 				8D77A7C12191C03B00A68220 /* LaunchScreen.storyboard */,
 				8D77A7C42191C03B00A68220 /* Info.plist */,
@@ -109,6 +124,49 @@
 				8D77A7CF2191C03B00A68220 /* Info.plist */,
 			);
 			path = "Loot-iOS-TestTests";
+			sourceTree = "<group>";
+		};
+		8D77A7E7219200AC00A68220 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8D77A7E12191CA4A00A68220 /* LootAPI.swift */,
+				8D77A7DF2191C8E400A68220 /* BackendRequests.swift */,
+				8D77A7D82191C2BB00A68220 /* Transaction.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8D77A7E8219200F000A68220 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D77A7DB2191C48C00A68220 /* TransactionView.swift */,
+				8D77A7EC219201E400A68220 /* HeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D77A7E92192013600A68220 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8D77A7E52191D73200A68220 /* TransactionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8D77A7EA2192014700A68220 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				8D77A7DD2191C87D00A68220 /* DataSingleton.swift */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		8D77A7EB2192015F00A68220 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8D77A7BA2191C03A00A68220 /* TransactionViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		BDE25DF98626085B4E414A80 /* Frameworks */ = {
@@ -322,9 +380,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D77A7BB2191C03A00A68220 /* TransactionViewController.swift in Sources */,
+				8D77A7E22191CA4A00A68220 /* LootAPI.swift in Sources */,
+				8D77A7E02191C8E400A68220 /* BackendRequests.swift in Sources */,
+				8D77A7E62191D73200A68220 /* TransactionCell.swift in Sources */,
 				8D77A7DC2191C48C00A68220 /* TransactionView.swift in Sources */,
+				8D77A7ED219201E400A68220 /* HeaderView.swift in Sources */,
 				8D77A7B92191C03A00A68220 /* AppDelegate.swift in Sources */,
 				8D77A7D92191C2BB00A68220 /* Transaction.swift in Sources */,
+				8D77A7DE2191C87D00A68220 /* DataSingleton.swift in Sources */,
+				8D77A7E42191CAC700A68220 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
