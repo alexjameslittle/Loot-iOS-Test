@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
     static var shared = Constants()
@@ -71,5 +72,19 @@ extension Array where Element: Equatable {
             }
         }
         self = result
+    }
+}
+
+extension UIView {
+    func popIn(fromScale: CGFloat = 0.5, duration: TimeInterval = 0.5, delay: TimeInterval = 0, completion: ((Bool) -> Void)? = nil) {
+        isHidden = false
+        alpha = 0
+        transform = CGAffineTransform(scaleX: fromScale, y: fromScale)
+        UIView.animate(
+            withDuration: duration, delay: delay, usingSpringWithDamping: 0.55, initialSpringVelocity: 3,
+            options: .curveEaseOut, animations: {
+                self.transform = .identity
+                self.alpha = 1
+        }, completion: completion)
     }
 }

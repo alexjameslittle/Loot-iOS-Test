@@ -34,6 +34,11 @@ class TransactionListViewController: UIViewController {
 
     @objc func refreshData() {
         DispatchQueue.main.async {
+            if let currentAmount = Double(DataSingleton.shared.transactions.first?.postTransactionBalance ?? "") {
+                self.title = currentAmount.currencyFormat
+            } else {
+                self.title = "Transactions"
+            }
             self.transactionView?.tableView.reloadData()
         }
     }
@@ -74,10 +79,22 @@ extension TransactionListViewController: UITableViewDelegate, UITableViewDataSou
             if let date = sections[safe: indexPath.section] {
                 let models = DataSingleton.shared.transactionsForDate(date: date)
                 cell.model = models[safe: indexPath.row]
+                cell.refreshCell = {
+                    tableView.beginUpdates()
+                    tableView.endUpdates()
+                }
             }
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? TransactionCell {
+            if (cell.model?.location) != nil {
+                cell.isExpanded = !cell.isExpanded
+            }
         }
     }
 }
