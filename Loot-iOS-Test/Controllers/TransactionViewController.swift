@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransactionListViewController: UIViewController {
+class TransactionViewController: UIViewController {
 
     var transactionView: TransactionView? { return self.view as? TransactionView }
 
@@ -39,13 +39,7 @@ class TransactionListViewController: UIViewController {
     }
 }
 
-extension TransactionListViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let cell = cell as? TransactionCell {
-            cell.baseView.popIn()
-        }
-    }
+extension TransactionViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderView.identifier) as? HeaderView {

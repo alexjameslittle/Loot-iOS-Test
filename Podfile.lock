@@ -1,24 +1,20 @@
 PODS:
-  - Hero (1.4.0)
   - SnapKit (4.0.1)
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
-  - Hero
   - SnapKit (~> 4.0.0)
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Hero
     - SnapKit
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 0a623a9b134750e5d67f239c4302e2b94b0811a1
+PODFILE CHECKSUM: c36307c75071ec2f53b8edde3d2c82605457e5c6
 
 COCOAPODS: 1.5.3
