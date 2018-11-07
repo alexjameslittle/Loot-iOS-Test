@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransactionViewController: UIViewController {
+class TransactionListViewController: UIViewController {
 
     var transactionView: TransactionView? { return self.view as? TransactionView }
 
@@ -34,12 +34,23 @@ class TransactionViewController: UIViewController {
 
     @objc func refreshData() {
         DispatchQueue.main.async {
+            if let currentAmount = Double(DataSingleton.shared.transactions.first?.postTransactionBalance ?? "") {
+                self.title = currentAmount.currencyFormat
+            } else {
+                self.title = "Transactions"
+            }
             self.transactionView?.tableView.reloadData()
         }
     }
 }
 
-extension TransactionViewController: UITableViewDelegate, UITableViewDataSource {
+extension TransactionListViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? TransactionCell {
+            cell.baseView.popIn()
+        }
+    }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderView.identifier) as? HeaderView {
@@ -68,10 +79,22 @@ extension TransactionViewController: UITableViewDelegate, UITableViewDataSource 
             if let date = sections[safe: indexPath.section] {
                 let models = DataSingleton.shared.transactionsForDate(date: date)
                 cell.model = models[safe: indexPath.row]
+                cell.refreshCell = {
+                    tableView.beginUpdates()
+                    tableView.endUpdates()
+                }
             }
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? TransactionCell {
+            if (cell.model?.location) != nil {
+                cell.isExpanded = !cell.isExpanded
+            }
         }
     }
 }

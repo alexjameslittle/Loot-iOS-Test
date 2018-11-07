@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = UINavigationController(rootViewController: TransactionViewController())
+        let vc = UINavigationController(rootViewController: TransactionListViewController())
         vc.navigationBar.isTranslucent = false
         window?.rootViewController = vc
         window?.makeKeyAndVisible()

@@ -10,7 +10,7 @@
 		00E5CC26CC89AA40EA4824FD /* Pods_Loot_iOS_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8046958AFB268859269B070B /* Pods_Loot_iOS_Test.framework */; };
 		51B80CBD2290ADA68DE64E7B /* Pods_Loot_iOS_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CAE1604F3B1803F0BE68F4 /* Pods_Loot_iOS_TestTests.framework */; };
 		8D77A7B92191C03A00A68220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7B82191C03A00A68220 /* AppDelegate.swift */; };
-		8D77A7BB2191C03A00A68220 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7BA2191C03A00A68220 /* TransactionViewController.swift */; };
+		8D77A7BB2191C03A00A68220 /* TransactionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7BA2191C03A00A68220 /* TransactionListViewController.swift */; };
 		8D77A7C02191C03B00A68220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D77A7BF2191C03B00A68220 /* Assets.xcassets */; };
 		8D77A7C32191C03B00A68220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D77A7C12191C03B00A68220 /* LaunchScreen.storyboard */; };
 		8D77A7CE2191C03B00A68220 /* Loot_iOS_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77A7CD2191C03B00A68220 /* Loot_iOS_TestTests.swift */; };
@@ -41,7 +41,7 @@
 		8046958AFB268859269B070B /* Pods_Loot_iOS_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loot_iOS_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D77A7B52191C03A00A68220 /* Loot-iOS-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loot-iOS-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D77A7B82191C03A00A68220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D77A7BA2191C03A00A68220 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		8D77A7BA2191C03A00A68220 /* TransactionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewController.swift; sourceTree = "<group>"; };
 		8D77A7BF2191C03B00A68220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D77A7C22191C03B00A68220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D77A7C42191C03B00A68220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		8D77A7EB2192015F00A68220 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8D77A7BA2191C03A00A68220 /* TransactionViewController.swift */,
+				8D77A7BA2191C03A00A68220 /* TransactionListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,12 +337,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Loot-iOS-Test/Pods-Loot-iOS-Test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,7 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D77A7BB2191C03A00A68220 /* TransactionViewController.swift in Sources */,
+				8D77A7BB2191C03A00A68220 /* TransactionListViewController.swift in Sources */,
 				8D77A7E22191CA4A00A68220 /* LootAPI.swift in Sources */,
 				8D77A7E02191C8E400A68220 /* BackendRequests.swift in Sources */,
 				8D77A7E62191D73200A68220 /* TransactionCell.swift in Sources */,
