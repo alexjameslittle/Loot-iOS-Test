@@ -8,7 +8,6 @@ target 'Loot-iOS-Test' do
   # Pods for Loot-iOS-Test
   pod 'SwiftLint'
   pod 'SnapKit', '~> 4.0.0'
-  pod 'Hero'
 
   target 'Loot-iOS-TestTests' do
     inherit! :search_paths

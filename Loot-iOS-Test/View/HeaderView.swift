@@ -14,7 +14,6 @@ class HeaderView: UITableViewHeaderFooterView {
 
     var baseView: UIView = {
         var base = UIView()
-        base.backgroundColor = .white
         return base
     }()
 
@@ -51,7 +50,8 @@ class HeaderView: UITableViewHeaderFooterView {
             make.edges.equalToSuperview()
         }
         headerLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(8)
+            make.edges.left.right.equalToSuperview().inset(20)
+            make.top.right.equalToSuperview()
             make.height.equalTo(44)
         }
     }

@@ -19,7 +19,7 @@ class TransactionView: UIView {
 
     lazy var tableView: UITableView = {
         var table = UITableView()
-        table.allowsSelection = true
+        table.allowsSelection = false
         table.backgroundColor = .clear
         table.separatorStyle = .none
         return table
